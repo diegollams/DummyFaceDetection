@@ -9,9 +9,12 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 
 import com.example.diegollams.dummyfacedetection.R;
+
+import java.io.File;
 
 public class MainActivity extends AppCompatActivity {
 
