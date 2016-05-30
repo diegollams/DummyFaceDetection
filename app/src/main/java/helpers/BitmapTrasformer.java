@@ -5,11 +5,13 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.Matrix;
+import android.graphics.RectF;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.util.Log;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -140,6 +142,12 @@ public class BitmapTrasformer {
 		}
 
 	}
+    public static Bitmap scaleBitmap(Bitmap bitmap, int reqWidth, int reqHeight){
+        Matrix m = new Matrix();
+        m.setRectToRect(new RectF(0, 0, bitmap.getWidth(), bitmap.getHeight()), new RectF(0, 0, reqWidth, reqHeight), Matrix.ScaleToFit.FILL);
+        return Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(), bitmap.getHeight(), m, true);
+    }
+
 	/**
 	 * will transform bitmap so every pixel will be in grayscale form
 	 * @param bitmap a bitmap will all channels in the same value
@@ -525,6 +533,24 @@ public class BitmapTrasformer {
 		}
 		return rotatedBitmap;
 	}
+
+	public static Bitmap calculateEigenFace(ArrayList<Bitmap> imagesBitmaps, int reqSize) {
+        Bitmap eigenBitmap = Bitmap.createBitmap(reqSize, reqSize, Bitmap.Config.ARGB_8888);
+        int[][] imageValues = new int[500][500];
+        eigenBitmap.setHasAlpha(true);
+        for (int i = 0; i < imagesBitmaps.size(); i++) {
+            for (int x = 0; x < reqSize; x++) {
+                for (int y = 0; y < reqSize; y++) {
+                    imageValues[x][y] += RGBHelper.getRed(imagesBitmaps.get(i).getPixel(x, y));
+                    if(i == imagesBitmaps.size() - 1){
+                        int pixel = RGBHelper.createGrayPixel(imageValues[x][y] / imagesBitmaps.size());
+                        eigenBitmap.setPixel(x, y, pixel);
+                    }
+                }
+            }
+        }
+        return eigenBitmap;
+    }
 
 	private static int[] getValidCordinate(int x, int y, int width, int height) {
 		int[] xy = new int[2];

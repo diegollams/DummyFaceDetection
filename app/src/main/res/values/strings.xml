@@ -2,4 +2,8 @@
     <string name="app_name">Dummy Face Detection</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_eigen_gallery">EigenGalleryActivity</string>
+    <string name="action_clean_gallery">Clean gallery</string>
+    <string name="action_calculate_eigen">Calculate eigen</string>
+    <string name="action_load_eigen_images">Load eigen faces</string>
+    <string name="action_load_gallery_images">Load gallery images</string>
 </resources>

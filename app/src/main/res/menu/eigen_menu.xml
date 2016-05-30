@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".activities.EigenGalleryActivity">
+    <item
+        android:id="@+id/action_clean_gallery"
+        android:orderInCategory="100"
+        android:title="@string/action_clean_gallery"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_calculate_eigen"
+        android:orderInCategory="100"
+        android:title="@string/action_calculate_eigen"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_load_gallery_images"
+        android:orderInCategory="100"
+        android:title="@string/action_load_gallery_images"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_load_eigen_images"
+        android:orderInCategory="100"
+        android:title="@string/action_load_eigen_images"
+        app:showAsAction="never" />
+</menu>
