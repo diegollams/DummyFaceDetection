@@ -20,9 +20,9 @@ import com.google.android.gms.vision.face.FaceDetector;
  */
 public class FaceOverlayView extends View {
     public static final String TAG = "FaceOverlay";
-    private Bitmap faceBitmap;
+    private Bitmap image;
     private SparseArray<Face> faceSparseArray;
-
+    private Bitmap faceBitmap;
     public FaceOverlayView(Context context) {
         this(context, null);
     }
@@ -38,10 +38,14 @@ public class FaceOverlayView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        if((faceBitmap != null) && (faceSparseArray != null)){
+        if((image != null) && (faceSparseArray != null)){
             double scale = drawBitmap(canvas);
             drawFaceBox(canvas, scale);
         }
+    }
+
+    public Bitmap getFaceBitmap() {
+        return faceBitmap;
     }
 
     private void drawFaceBox(Canvas canvas, double scale) {
@@ -63,6 +67,12 @@ public class FaceOverlayView extends View {
             right = (float) scale * ( face.getPosition().x + face.getWidth() );
             bottom = (float) scale * ( face.getPosition().y + face.getHeight() );
 
+            if(i == 0){
+                faceBitmap = Bitmap.createBitmap(image, 0, 0 , 50, 50);
+
+            }
+
+
             canvas.drawRect( left, top, right, bottom, paint );
         }
     }
@@ -70,18 +80,18 @@ public class FaceOverlayView extends View {
     private double drawBitmap(Canvas canvas) {
         double viewWidth = canvas.getWidth();
         double viewHeight = canvas.getHeight();
-        double imageWidth = faceBitmap.getWidth();
-        double imageHeight = faceBitmap.getHeight();
+        double imageWidth = image.getWidth();
+        double imageHeight = image.getHeight();
         double scale = Math.min( viewWidth / imageWidth, viewHeight / imageHeight );
 
         Rect destBounds = new Rect( 0, 0, (int) ( imageWidth * scale ), (int) ( imageHeight * scale ) );
-        canvas.drawBitmap( faceBitmap, null, destBounds, null );
+        canvas.drawBitmap(image, null, destBounds, null );
 
         return scale;
     }
 
     public void setBitmap(Bitmap bitmap){
-        this.faceBitmap = bitmap;
+        this.image = bitmap;
         FaceDetector faceDetector = new FaceDetector.Builder(getContext())
                 .setTrackingEnabled(false)
                 .setLandmarkType(FaceDetector.ALL_LANDMARKS)

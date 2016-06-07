@@ -2,17 +2,13 @@ package com.example.diegollams.dummyfacedetection.activities;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -22,7 +18,6 @@ import android.widget.Toast;
 import com.example.diegollams.dummyfacedetection.R;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -31,7 +26,6 @@ import java.util.Date;
 
 import adapters.GalleryAdapter;
 import helpers.BitmapTrasformer;
-import helpers.RGBHelper;
 
 public class EigenGalleryActivity extends AppCompatActivity {
     public static final int REQUEST_IMAGE_CAPTURE = 1;

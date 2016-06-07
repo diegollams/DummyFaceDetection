@@ -14,11 +14,12 @@
     android:orientation="vertical">
 
     <helpers.FaceOverlayView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/detect_imageView"
         android:layout_gravity="center_horizontal"
          />
+
 
     <TextView
         android:layout_width="wrap_content"

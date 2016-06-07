@@ -9,17 +9,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
-
 import com.example.diegollams.dummyfacedetection.R;
-import com.google.android.gms.vision.face.Face;
-import com.google.android.gms.vision.face.FaceDetector;
 
 import helpers.FaceOverlayView;
 
 public class DetectActivity extends AppCompatActivity {
 
     private static final int REQUEST_IMAGE_CAPTURE = 42;
-    FaceOverlayView faceImageView;
+    private FaceOverlayView faceOverlayView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +26,8 @@ public class DetectActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        faceImageView = (FaceOverlayView) findViewById(R.id.detect_imageView);
+        faceOverlayView = (FaceOverlayView) findViewById(R.id.detect_imageView);
+
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(photoListener);
@@ -38,8 +36,7 @@ public class DetectActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
             Bitmap photo = (Bitmap) data.getExtras().get("data");
-            faceImageView.setBitmap(photo);
-
+            faceOverlayView.setBitmap(photo);
         }
     }
 

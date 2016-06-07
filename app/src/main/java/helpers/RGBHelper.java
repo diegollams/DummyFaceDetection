@@ -1,7 +1,5 @@
 package helpers;
 
-import android.graphics.Color;
-
 /**
  * Created by diegollams on 2/6/16.
  */

@@ -13,7 +13,6 @@ import com.example.diegollams.dummyfacedetection.R;
 import java.util.ArrayList;
 
 import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
-import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
 
 /**
  * Created by diegollams on 5/27/16.
