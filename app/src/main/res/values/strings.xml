@@ -6,4 +6,6 @@
     <string name="action_calculate_eigen">Calculate eigen</string>
     <string name="action_load_eigen_images">Load eigen faces</string>
     <string name="action_load_gallery_images">Load gallery images</string>
+    <string name="title_activity_detect">detectActivity</string>
+    <string name="info_message">Informacion</string>
 </resources>

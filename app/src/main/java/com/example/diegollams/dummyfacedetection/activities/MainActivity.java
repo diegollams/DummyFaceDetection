@@ -27,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
 
         final Button eigenButton = (Button) findViewById(R.id.eigen_button);
         eigenButton.setOnClickListener(eigenClickListener);
+        final Button detectionButton = (Button) findViewById(R.id.detection_button);
+        detectionButton.setOnClickListener(detectClickListener);
 
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -64,9 +66,17 @@ public class MainActivity extends AppCompatActivity {
     View.OnClickListener eigenClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            Intent intent = new Intent(MainActivity.this,EigenGalleryActivity.class);
-            startActivity(intent);
+            Intent eigenIntent = new Intent(MainActivity.this, EigenGalleryActivity.class);
+            startActivity(eigenIntent);
 
+        }
+    };
+
+    View.OnClickListener detectClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent detectIntent = new Intent(MainActivity.this, DetectActivity.class);
+            startActivity(detectIntent);
         }
     };
 }
