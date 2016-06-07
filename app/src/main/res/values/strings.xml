@@ -8,4 +8,9 @@
     <string name="action_load_gallery_images">Load gallery images</string>
     <string name="title_activity_detect">detectActivity</string>
     <string name="info_message">Informacion</string>
+    <string name="compare_button_string">Ir a comparacion</string>
+    <string name="eigen_button_string">Ver Eigenfaces</string>
+    <string name="detection_button_string">Ir a deteccion</string>
+    <string name="title_activity_compare_image">CompareImageActivity</string>
+    <string name="invalid_images_string">Invalid Images</string>
 </resources>

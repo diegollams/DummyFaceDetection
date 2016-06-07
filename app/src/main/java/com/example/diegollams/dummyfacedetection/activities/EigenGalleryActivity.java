@@ -52,7 +52,7 @@ public class EigenGalleryActivity extends AppCompatActivity {
         this.imagesGridView.setAdapter(galleryAdapter);
         loadGalleryArray();
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.capture);
         fab.setOnClickListener(fabClickListener);
     }
 

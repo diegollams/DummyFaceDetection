@@ -26,16 +26,10 @@ public class MainActivity extends AppCompatActivity {
         eigenButton.setOnClickListener(eigenClickListener);
         final Button detectionButton = (Button) findViewById(R.id.detection_button);
         detectionButton.setOnClickListener(detectClickListener);
+        final Button compareButton = (Button) findViewById(R.id.compare_button);
+        compareButton.setOnClickListener(compareClickListener);
 
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
     }
 
     @Override
@@ -74,6 +68,13 @@ public class MainActivity extends AppCompatActivity {
         public void onClick(View v) {
             Intent detectIntent = new Intent(MainActivity.this, DetectActivity.class);
             startActivity(detectIntent);
+        }
+    };
+    View.OnClickListener compareClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent compareIntent = new Intent(MainActivity.this, CompareImageActivity.class);
+            startActivity(compareIntent);
         }
     };
 }

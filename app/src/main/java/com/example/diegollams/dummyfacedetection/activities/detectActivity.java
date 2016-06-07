@@ -29,7 +29,7 @@ public class DetectActivity extends AppCompatActivity {
         faceOverlayView = (FaceOverlayView) findViewById(R.id.detect_imageView);
 
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.capture);
         fab.setOnClickListener(photoListener);
     }
     @Override
