@@ -22,7 +22,6 @@ public class FaceOverlayView extends View {
     public static final String TAG = "FaceOverlay";
     private Bitmap image;
     private SparseArray<Face> faceSparseArray;
-    private Bitmap faceBitmap;
     public FaceOverlayView(Context context) {
         this(context, null);
     }
@@ -44,9 +43,6 @@ public class FaceOverlayView extends View {
         }
     }
 
-    public Bitmap getFaceBitmap() {
-        return faceBitmap;
-    }
 
     private void drawFaceBox(Canvas canvas, double scale) {
         Paint paint = new Paint();
@@ -66,12 +62,6 @@ public class FaceOverlayView extends View {
             top = (float) ( face.getPosition().y * scale );
             right = (float) scale * ( face.getPosition().x + face.getWidth() );
             bottom = (float) scale * ( face.getPosition().y + face.getHeight() );
-
-            if(i == 0){
-                faceBitmap = Bitmap.createBitmap(image, 0, 0 , 50, 50);
-
-            }
-
 
             canvas.drawRect( left, top, right, bottom, paint );
         }

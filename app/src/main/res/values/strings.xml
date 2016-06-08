@@ -13,4 +13,7 @@
     <string name="detection_button_string">Ir a deteccion</string>
     <string name="title_activity_compare_image">CompareImageActivity</string>
     <string name="invalid_images_string">Invalid Images</string>
+    <string name="compare_string">Comparar imagenes</string>
+    <string name="diferent_sizes_string">Tamanos de imagenes diferentes</string>
+    <string name="missing_image_string">Falta una imagen</string>
 </resources>

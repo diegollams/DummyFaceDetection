@@ -337,13 +337,13 @@ public class BitmapTrasformer {
 		Bitmap histogram = Bitmap.createBitmap(MAX_PIXEL_VALUE * 3, 100, Bitmap.Config.ARGB_8888);
 		for (int x = 0; x < MAX_PIXEL_VALUE; x++) {
 			for (int y = 0; y < (redCounts[x] *100) /maxRed; y++) {
-				histogram.setPixel(x,y, Color.RED);
+				histogram.setPixel(x, y, Color.RED);
 			}
 			for (int y = 0; y < (blueCounts[x] *100) /maxBlue; y++) {
-				histogram.setPixel(x + MAX_PIXEL_VALUE,y, Color.BLUE);
+				histogram.setPixel(x, y, Color.BLUE);
 			}
-			for (int y = 0 * 2; y < (greenCounts[x] *100) /maxGreen; y++) {
-				histogram.setPixel(x + MAX_PIXEL_VALUE * 2 ,y, Color.GREEN);
+			for (int y = 0; y < (greenCounts[x] *100) /maxGreen; y++) {
+				histogram.setPixel(x, y, Color.GREEN);
 			}
 		}
 		return histogram;
